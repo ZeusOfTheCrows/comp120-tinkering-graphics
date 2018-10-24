@@ -1,10 +1,16 @@
+import random
+
 import pygame
 from pygame.locals import *
 pygame.init()
 
 clock = pygame.time.Clock()
 
-imageToRecolour = pygame.image.load('Images/Image1.png')
+image_path = []
+for i in range(0, 15):
+    image_path.append(str('Images/Tilemap' + str(i) + '.png'))
+
+imageToRecolour = pygame.image.load(image_path[0])
 colourToBeReplaced = pygame.Color(128, 0, 128)
 newColours = {'Blood': (102, 0, 0), 'Mud': (144, 108, 63)}
 screen = pygame.display.set_mode((imageToRecolour.get_width(), imageToRecolour.get_height()))
@@ -29,6 +35,8 @@ while running:  # Main game loop
             replace_colour(colourToBeReplaced, newColours['Blood'], imageToRecolour)
         elif event.type == KEYUP and event.key == K_m:  # Press m for mud coloured splash
             replace_colour(colourToBeReplaced, newColours['Mud'], imageToRecolour)
+        elif event.type == KEYUP and event.key == K_n:  # Press n for new tile
+            imageToRecolour = pygame.image.load(image_path[random.randint(0, 14)])
 
     screen.blit(imageToRecolour, (0, 0))
 
