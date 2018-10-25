@@ -1,10 +1,15 @@
 # comp120-tinkering-graphics
 Python Code for Re-purposing Graphics Algorithms
 
-Part (A) of COMP120 Assignment 1: Tinkering Graphics - Contracts
-We have chosen four contracts to split between the four of us, but this does not exclude one another from asking each other for assistance, teamwork is gold after all.
+### Part (A) of COMP120 Assignment 1: Tinkering Graphics - Contracts
 
-Cyrus will be undertaking Contract #1 - Dungeon Tile Generator.
-Adrian will be undertaking Contract #3 - Dungeon Entity Generator, unless he is unavailable or wishes to change contract.
-Paul will be undertaking Contract #4 - Dungeon Entity Reskinning.
-Jakob will be undertaking Contract #5 - Colour Blindness UI Analysis Tool.
+We all worked on our own contracts, sharing just advice rather actually pair programming.
+
+[Cyrus](https://github.com/ZeusOfTheCrows) will be taking ownership of Contract #1 - Dungeon Tile Generator.\
+[Adrian](https://github.com/AdrianRodri) will be taking ownership of Contract #3 - Dungeon Entity Generator, unless he is unavailable or wishes to change contract.\
+[Paul](https://github.com/Powll) will be taking ownership of Contract #4 - Dungeon Entity Reskinning.\
+[Jakob](https://github.com/jc220866) will be taking ownership of Contract #5 - Colour Blindness UI Analysis Tool.\
+
+### Algorithms and Functionality
+
+The algorithms were distributed amongst the members, each of us implementing at least one into our contracts.
