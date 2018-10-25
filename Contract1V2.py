@@ -42,8 +42,8 @@ while running:  # Main game loop
         elif event.type == KEYUP and event.key == K_f:  # Press f for fire aligned room
             screen.blit(overlays[3], (0, 0))
         elif event.type == KEYUP and event.key == K_n:  # Press n for new room
-            # floorImage = pygame.image.load(image_path[random.randint(0, 14)])
-            floorImage = pygame.image.load(image_path[0])
+            floorImage = pygame.image.load(image_path[random.randint(0, 4)])
+            # floorImage = pygame.image.load(image_path[0])
             screen.blit(floorImage, (0, 0))
 
     pygame.display.update()
