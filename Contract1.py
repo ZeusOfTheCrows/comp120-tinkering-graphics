@@ -63,6 +63,8 @@ def apply_overlay(key_pressed):
 
 running = True
 while running:
+
+    # for loop is only to check user inputs
     for event in pygame.event.get():
         if \
             event.type == QUIT \
