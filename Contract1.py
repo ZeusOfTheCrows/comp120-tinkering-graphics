@@ -69,8 +69,10 @@ while running:
             or \
                 (event.type == KEYUP and event.key == K_ESCAPE):
             running = False
-        elif event.type == KEYUP:  # if any key is pressed, launches function
-            apply_overlay(event.key)                         # (inefficient?)
+        elif event.type == KEYUP:
+            # If any key is pressed, launches overlay function
+            # Which key was pressed is handled by the function itself
+            apply_overlay(event.key)
 
     pygame.display.update()
     clock.tick(60)
