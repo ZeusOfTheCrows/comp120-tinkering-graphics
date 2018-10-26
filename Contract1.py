@@ -1,3 +1,11 @@
+"""
+-------------------------------------------------------------------------------
+Contract#1 - dungeon tile generator
+Taken ownership of by Cyrus - worked on by Cyrus, with verbal
+help from Paul and Jakob during studio time.
+-------------------------------------------------------------------------------
+"""
+
 import random
 import pygame
 from pygame.locals import *
