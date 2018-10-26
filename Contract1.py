@@ -5,13 +5,13 @@ pygame.init()
 
 clock = pygame.time.Clock()
 
+numberOfRoomImages = 5  # number of room images in the "Images" folder
 image_path = []  # loads
-for i in range(0, 15):
+for i in range(0, numberOfRoomImages):
     image_path.append(str('Images/Room' + str(i) + '.png'))
-
 roomImage = pygame.image.load(image_path[0])  # The first room image will
 # always be the basic layout, after that it will be random
-numberOfRoomImages = 5  # number of room images in the "Images" folder
+
 overlays = [pygame.image.load('Images/WaterOverlay.png'),
             pygame.image.load('Images/AirOverlay.png'),
             pygame.image.load('Images/EarthOverlay.png'),
@@ -34,8 +34,9 @@ def apply_overlay(key_pressed):
 
           Press W to display the water overlay,
           A for air, E for earth, and F for fire.
-          To display a new floor tile, press N.
-          This also removed the overlay. Press Esc to exit.
+          To display a new floor tile with a random overlay, press N.
+          To display a new floor tile with no overlay, press N.
+          Press Esc to exit.
 
               """
 
@@ -48,11 +49,16 @@ def apply_overlay(key_pressed):
     elif key_pressed == K_f:
         screen.blit(overlays[3], (0, 0))
     elif key_pressed == K_n:
-        global roomImage  # This may not need to be global - please advise
-        roomImage = pygame.image.load(image_path[random.randint
-                                      (0, numberOfRoomImages - 1)]
-                                      )
-        screen.blit(roomImage, (0, 0))
+        room_image = pygame.image.load(image_path[random.randint
+                                       (0, numberOfRoomImages - 1)]
+                                       )
+        screen.blit(room_image, (0, 0))
+    elif key_pressed == K_r:
+        room_image = pygame.image.load(image_path[random.randint
+                                       (0, numberOfRoomImages - 1)]
+                                       )
+        screen.blit(room_image, (0, 0))
+        screen.blit(overlays[random.randint(0, len(overlays)-1)], (0, 0))
 
 
 running = True
@@ -64,7 +70,7 @@ while running:
                 (event.type == KEYUP and event.key == K_ESCAPE):
             running = False
         elif event.type == KEYUP:  # if any key is pressed, launches function
-            apply_overlay(event.key)                        # (inefficient)
+            apply_overlay(event.key)                         # (inefficient?)
 
     pygame.display.update()
     clock.tick(60)
